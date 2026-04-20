@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lab Exam Prep Guide</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Highlight.js for Java Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        pre { font-family: 'Fira Code', monospace; font-size: 0.875rem; margin: 0; }
+        .code-container { background-color: #282c34; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* Active Sidebar Link Style */
+        .active-nav { background-color: #e0e7ff; color: #4f46e5; font-weight: 600; }
+        .active-nav .nav-icon { background-color: #4f46e5; color: white; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased flex flex-col md:flex-row min-h-screen">
+
+    <!-- Fixed Sidebar Navigation -->
+    <aside class="w-full md:w-72 bg-white border-r border-slate-200 fixed top-0 h-screen overflow-y-auto z-20 hidden md:block shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
+        <div class="p-6">
+            <h1 class="text-2xl font-bold text-indigo-600 mb-1 flex items-center gap-2">
+                <i class="fa-brands fa-java text-3xl"></i> Java Prep
+            </h1>
+            <p class="text-sm text-slate-500 mb-8 font-medium">Lab Exam Study Guide</p>
+            
+            <nav class="space-y-2" id="sidebar-nav">
+                <a href="#unit-1" class="nav-link flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 transition-colors">
+                    <div class="nav-icon w-7 h-7 rounded-md bg-slate-100 flex items-center justify-center text-xs text-slate-500 transition-colors">1</div>
+                    Unit 1: Intro to Java
+                </a>
+                <a href="#unit-2" class="nav-link flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 transition-colors">
+                    <div class="nav-icon w-7 h-7 rounded-md bg-slate-100 flex items-center justify-center text-xs text-slate-500 transition-colors">2</div>
+                    Unit 2: Classes & Objects
+                </a>
+                <a href="#unit-3" class="nav-link flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 transition-colors">
+                    <div class="nav-icon w-7 h-7 rounded-md bg-slate-100 flex items-center justify-center text-xs text-slate-500 transition-colors">3</div>
+                    Unit 3: File & Exceptions
+                </a>
+                <a href="#unit-4" class="nav-link flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 transition-colors">
+                    <div class="nav-icon w-7 h-7 rounded-md bg-slate-100 flex items-center justify-center text-xs text-slate-500 transition-colors">4</div>
+                    Unit 4: Multithreading
+                </a>
+                <a href="#unit-5" class="nav-link flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 transition-colors">
+                    <div class="nav-icon w-7 h-7 rounded-md bg-slate-100 flex items-center justify-center text-xs text-slate-500 transition-colors">5</div>
+                    Unit 5: Swing UI
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="md:hidden bg-white border-b border-slate-200 p-4 sticky top-0 z-30 flex justify-between items-center shadow-sm">
+        <h1 class="text-xl font-bold text-indigo-600 flex items-center gap-2">
+            <i class="fa-brands fa-java text-2xl"></i> Java Prep
+        </h1>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 md:ml-72 p-6 md:p-10 lg:p-12 max-w-5xl">
+        
+        <div class="mb-12">
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">Master Study Sheet</h2>
+            <p class="text-slate-600 text-lg">Questions from your exam slip have been grouped, merged by concept, and solved with simple logic. <br class="hidden md:block">Scroll or use the sidebar to navigate through the units.</p>
+        </div>
+
+        <!-- ================= UNIT 1 ================= -->
+        <section id="unit-1" class="mb-20 scroll-mt-10">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 pb-3 border-b-2 border-indigo-100 flex items-center gap-3">
+                <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-sm">1</span>
+                Unit 1: Introduction to Java
+            </h2>
+
+            <!-- Card: Sphere -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-slate-50 border-b border-slate-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-1 rounded shadow-sm">Single Question</span>
+                        <h3 class="text-lg font-bold text-slate-900">Sphere Dimensions</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Original Slip Question(s):</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1 font-medium">
+                            <li>Write a Java program to accept dimensions of a sphere and print the surface area and volume.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- IDE / Terminal Block -->
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">import java.util.Scanner;
+
+public class Sphere {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter radius of the sphere: ");
+        double radius = sc.nextDouble();
+
+        double surfaceArea = 4 * Math.PI * radius * radius;
+        // Use 4.0/3.0 to prevent integer division
+        double volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+
+        System.out.println("Surface Area: " + surfaceArea);
+        System.out.println("Volume: " + volume);
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-emerald-400"></i> Expected Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed">Enter radius of the sphere: <span class="text-white">5</span>
+Surface Area: 314.1592653589793
+Volume: 523.5987755982989</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Sort Names -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-slate-50 border-b border-slate-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-1 rounded shadow-sm">Single Question</span>
+                        <h3 class="text-lg font-bold text-slate-900">Sort Employee Names</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Original Slip Question(s):</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1 font-medium">
+                            <li>Write a java program to accept n employee names from user. Sort them in ascending order and Display them.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- IDE / Terminal Block -->
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">import java.util.Scanner;
+import java.util.Arrays;
+
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of employees: ");
+        int n = sc.nextInt();
+        sc.nextLine(); // Consume newline
+
+        String[] names = new String[n];
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter name " + (i + 1) + ": ");
+            names[i] = sc.nextLine();
+        }
+
+        Arrays.sort(names); // Built-in sorting
+
+        System.out.println("\nSorted Names:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-emerald-400"></i> Expected Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed">Enter number of employees: <span class="text-white">3</span>
+Enter name 1: <span class="text-white">Charlie</span>
+Enter name 2: <span class="text-white">Alice</span>
+Enter name 3: <span class="text-white">Bob</span>
+
+Sorted Names:
+Alice
+Bob
+Charlie</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= UNIT 2 ================= -->
+        <section id="unit-2" class="mb-20 scroll-mt-10">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 pb-3 border-b-2 border-indigo-100 flex items-center gap-3">
+                <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-sm">2</span>
+                Unit 2: Classes and Objects
+            </h2>
+
+            <!-- Card: Interfaces & Abstract Merged -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-purple-50 border-b border-purple-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-purple-600 text-white text-xs font-bold px-2.5 py-1 rounded shadow-sm flex items-center gap-1">
+                            <i class="fa-solid fa-code-merge"></i> Merged Concept
+                        </span>
+                        <h3 class="text-lg font-bold text-slate-900">Interfaces & Abstract Shapes</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-purple-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Addresses these slip questions:</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2 font-medium">
+                            <li>Define an interface "Operation" which has methods area(), volume()...</li>
+                            <li>Define an abstract class Shape with abstract methods area() and volume()...</li>
+                            <li>Define an Interface Shape with abstract method area()... (use final keyword).</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">interface Operation {
+    // Variables in interface are inherently public static final
+    final double PI = 3.142; 
+    
+    void area();
+    void volume();
+}
+
+class Circle implements Operation {
+    double radius;
+    Circle(double r) { this.radius = r; }
+
+    public void area() {
+        System.out.println("Area of Circle: " + (PI * radius * radius));
+    }
+    public void volume() {
+        System.out.println("Circle has no volume.");
+    }
+}
+
+class Cylinder implements Operation {
+    double radius, height;
+    Cylinder(double r, double h) {
+        this.radius = r;
+        this.height = h;
+    }
+
+    public void area() {
+        System.out.println("Surface Area of Cylinder: " + (2 * PI * radius * (radius + height)));
+    }
+    public void volume() {
+        System.out.println("Volume of Cylinder: " + (PI * radius * radius * height));
+    }
+}
+
+public class ShapeMain {
+    public static void main(String[] args) {
+        Circle c = new Circle(5);
+        c.area();
+        c.volume();
+        
+        System.out.println();
+        
+        Cylinder cy = new Cylinder(4, 10);
+        cy.area();
+        cy.volume();
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-emerald-400"></i> Expected Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed">Area of Circle: 78.55
+Circle has no volume.
+
+Surface Area of Cylinder: 351.904
+Volume of Cylinder: 502.72</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Employee Array Merged -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-purple-50 border-b border-purple-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-purple-600 text-white text-xs font-bold px-2.5 py-1 rounded shadow-sm flex items-center gap-1">
+                            <i class="fa-solid fa-code-merge"></i> Merged Concept
+                        </span>
+                        <h3 class="text-lg font-bold text-slate-900">Employee/Manager (Array of Objects & Inheritance)</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-purple-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Addresses these slip questions:</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2 font-medium">
+                            <li>Define class Employee (id, name, salary)... Subclass Manager with private member bonus... display worker having max total salary.</li>
+                            <li>Write a program which define class Employee... Store information of 'n' employees...</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">import java.util.Scanner;
+
+class Employee {
+    int id;
+    String name;
+    double salary;
+
+    void accept(int id, String name, double salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+    void display() {
+        System.out.print("ID: " + id + ", Name: " + name + ", Base Salary: " + salary);
+    }
+}
+
+class Manager extends Employee {
+    private double bonus;
+
+    void acceptManager(int id, String name, double salary, double bonus) {
+        super.accept(id, name, salary);
+        this.bonus = bonus;
+    }
+    double getTotalSalary() {
+        return salary + bonus;
+    }
+    void display() {
+        super.display();
+        System.out.println("\nTotal Salary (with bonus): " + getTotalSalary());
+    }
+}
+
+public class EmployeeMain {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of managers: ");
+        int n = sc.nextInt();
+        Manager[] managers = new Manager[n];
+        int maxIndex = 0;
+
+        for (int i = 0; i < n; i++) {
+            managers[i] = new Manager();
+            System.out.println("Enter ID, Name, Salary, Bonus for Manager " + (i+1) + ":");
+            managers[i].acceptManager(sc.nextInt(), sc.next(), sc.nextDouble(), sc.nextDouble());
+            
+            if (managers[i].getTotalSalary() > managers[maxIndex].getTotalSalary()) {
+                maxIndex = i;
+            }
+        }
+        System.out.println("\n--- Highest Paid Manager ---");
+        managers[maxIndex].display();
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-emerald-400"></i> Expected Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed">Enter number of managers: <span class="text-white">2</span>
+Enter ID, Name, Salary, Bonus for Manager 1:
+<span class="text-white">101 Alice 50000 5000</span>
+Enter ID, Name, Salary, Bonus for Manager 2:
+<span class="text-white">102 Bob 60000 10000</span>
+
+--- Highest Paid Manager ---
+ID: 102, Name: Bob, Base Salary: 60000.0
+Total Salary (with bonus): 70000.0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: HR Manager Override -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-slate-50 border-b border-slate-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-1 rounded shadow-sm">Single Question</span>
+                        <h3 class="text-lg font-bold text-slate-900">Method Overriding (HRManager)</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Original Slip Question(s):</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1 font-medium">
+                            <li>Write a Java program to create a class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee().</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">class Employee2 {
+    void work() {
+        System.out.println("Employee is working on general tasks.");
+    }
+    double getSalary() {
+        return 40000;
+    }
+}
+
+class HRManager extends Employee2 {
+    @Override
+    void work() {
+        System.out.println("HR Manager is managing employees and hiring.");
+    }
+    void addEmployee() {
+        System.out.println("HR Manager added a new employee to the system.");
+    }
+}
+
+public class HRMain {
+    public static void main(String[] args) {
+        Employee2 emp = new Employee2();
+        emp.work();
+        
+        System.out.println();
+        
+        HRManager hr = new HRManager();
+        hr.work();          // Overridden method
+        hr.addEmployee();   // New method in subclass
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-emerald-400"></i> Expected Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed">Employee is working on general tasks.
+
+HR Manager is managing employees and hiring.
+HR Manager added a new employee to the system.</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= UNIT 3 ================= -->
+        <section id="unit-3" class="mb-20 scroll-mt-10">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 pb-3 border-b-2 border-indigo-100 flex items-center gap-3">
+                <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-sm">3</span>
+                Unit 3: File & Exception Handling
+            </h2>
+
+            <!-- Card: Custom Exceptions Merged -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-purple-50 border-b border-purple-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-purple-600 text-white text-xs font-bold px-2.5 py-1 rounded shadow-sm flex items-center gap-1">
+                            <i class="fa-solid fa-code-merge"></i> Merged Concept
+                        </span>
+                        <h3 class="text-lg font-bold text-slate-900">Custom Exceptions for Numbers</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-purple-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Addresses these slip questions:</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2 font-medium">
+                            <li>Accept number... if zero throw "Number Is Zero", otherwise calculate sum...</li>
+                            <li>Accept number... zero throw "Number is Zero". If non-numeric generate error "Number is Invalid" otherwise check palindrome.</li>
+                            <li>Accept number... greater than 100 throw "Number is out of Range"...</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">import java.util.Scanner;
+
+class ZeroException extends Exception {
+    public ZeroException(String msg) { super(msg); }
+}
+class OutOfRangeException extends Exception {
+    public OutOfRangeException(String msg) { super(msg); }
+}
+
+public class NumberValidation {
+    static void processNumber(int num) throws ZeroException, OutOfRangeException {
+        if (num == 0) {
+            throw new ZeroException("Number Is Zero");
+        } else if (num > 100) {
+            throw new OutOfRangeException("Number is out of Range");
+        } else {
+            // Check Palindrome Logic
+            int temp = num, rev = 0;
+            while (temp > 0) {
+                rev = (rev * 10) + (temp % 10);
+                temp /= 10;
+            }
+            if (num == rev) System.out.println(num + " is a Palindrome.");
+            else System.out.println(num + " is NOT a Palindrome.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        
+        try {
+            // Handles the "Non-numeric" invalid data requirement natively
+            int num = Integer.parseInt(sc.nextLine());
+            processNumber(num);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Number is Invalid (Non-numeric)");
+        } catch (ZeroException | OutOfRangeException e) {
+            System.out.println("User Defined Exception Caught: " + e.getMessage());
+        }
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-emerald-400"></i> Expected Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed"><span class="text-slate-500 italic">// Scenario 1: Valid Palindrome</span>
+Enter a number: <span class="text-white">121</span>
+121 is a Palindrome.
+
+<span class="text-slate-500 italic">// Scenario 2: Testing Custom ZeroException</span>
+Enter a number: <span class="text-white">0</span>
+User Defined Exception Caught: Number Is Zero
+
+<span class="text-slate-500 italic">// Scenario 3: Testing Non-numeric validation</span>
+Enter a number: <span class="text-white">abc</span>
+Error: Number is Invalid (Non-numeric)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: File Handling -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-slate-50 border-b border-slate-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-1 rounded shadow-sm">Single Question</span>
+                        <h3 class="text-lg font-bold text-slate-900">File Analysis (Lines, Words, Chars)</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Original Slip Question(s):</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1 font-medium">
+                            <li>Write a java program to count number of lines, words and characters from a given file.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">import java.io.*;
+
+public class FileCounter {
+    public static void main(String[] args) {
+        // Ensure 'sample.txt' exists in the same directory before running
+        File file = new File("sample.txt");
+        int chars = 0, words = 0, lines = 0;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                lines++;
+                chars += line.length();
+                String[] wordList = line.trim().split("\\s+"); 
+                if(wordList.length > 0 && !wordList[0].isEmpty()) {
+                    words += wordList.length;
+                }
+            }
+            System.out.println("Lines: " + lines);
+            System.out.println("Words: " + words);
+            System.out.println("Characters: " + chars);
+        } catch (IOException e) {
+            System.out.println("File error: " + e.getMessage());
+        }
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-emerald-400"></i> Expected Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed"><span class="text-slate-500 italic">// Assuming sample.txt has some content:</span>
+Lines: 5
+Words: 24
+Characters: 142</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= UNIT 4 ================= -->
+        <section id="unit-4" class="mb-20 scroll-mt-10">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 pb-3 border-b-2 border-indigo-100 flex items-center gap-3">
+                <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-sm">4</span>
+                Unit 4: Multithreading
+            </h2>
+
+            <!-- Card: Basic Threads Merged -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-purple-50 border-b border-purple-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-purple-600 text-white text-xs font-bold px-2.5 py-1 rounded shadow-sm flex items-center gap-1">
+                            <i class="fa-solid fa-code-merge"></i> Merged Concept
+                        </span>
+                        <h3 class="text-lg font-bold text-slate-900">Basic Number Threads</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-purple-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Addresses these slip questions:</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2 font-medium">
+                            <li>Write a Java program to create a thread that prints the first 5 Fibonacci numbers.</li>
+                            <li>Write a Java program to create a thread that checks whether a number is Armstrong or not. (Repeated 3 times)</li>
+                            <li>Write a Java program to take a number... and print all odd numbers from 1 to n.(Use thread)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">class FiboThread extends Thread {
+    public void run() {
+        int a = 0, b = 1;
+        System.out.print("Fibonacci: " + a + " " + b);
+        for (int i = 2; i < 5; i++) {
+            int c = a + b;
+            System.out.print(" " + c);
+            a = b; b = c;
+        }
+        System.out.println();
+    }
+}
+
+class ArmstrongThread extends Thread {
+    int num;
+    ArmstrongThread(int n) { this.num = n; }
+    public void run() {
+        int temp = num, sum = 0;
+        while (temp != 0) {
+            sum += Math.pow(temp % 10, 3);
+            temp /= 10;
+        }
+        System.out.println("Armstrong Check (" + num + "): " + (sum == num));
+    }
+}
+
+class OddThread extends Thread {
+    int max;
+    OddThread(int max) { this.max = max; }
+    public void run() {
+        System.out.print("Odds up to " + max + ": ");
+        for(int i=1; i<=max; i+=2) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+
+public class BasicThreads {
+    public static void main(String[] args) {
+        new FiboThread().start();
+        new ArmstrongThread(153).start(); // 153 is Armstrong
+        new OddThread(9).start();
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-emerald-400"></i> Expected Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed"><span class="text-slate-500 italic">// Note: Output order may vary because threads run simultaneously.</span>
+Fibonacci: 0 1 1 2 3
+Armstrong Check (153): true
+Odds up to 9: 1 3 5 7 9</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Railway Sync -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-slate-50 border-b border-slate-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-1 rounded shadow-sm">Single Question</span>
+                        <h3 class="text-lg font-bold text-slate-900">Synchronization (Railway Reservation)</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Original Slip Question(s):</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1 font-medium">
+                            <li>Write a Java program to demonstrate multithreading using a Railway Reservation System, where one thread handles ticket booking and another thread handles ticket cancellation simultaneously.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">class TicketBooking {
+    int availableTickets = 10;
+
+    // synchronized prevents race conditions
+    synchronized void bookTicket(int requested) {
+        if (availableTickets >= requested) {
+            System.out.println(Thread.currentThread().getName() + " booked " + requested + " ticket(s).");
+            availableTickets -= requested;
+        } else {
+            System.out.println("Tickets not available for " + Thread.currentThread().getName());
+        }
+        System.out.println("Remaining: " + availableTickets);
+    }
+
+    synchronized void cancelTicket(int amount) {
+        availableTickets += amount;
+        System.out.println(Thread.currentThread().getName() + " cancelled " + amount + " ticket(s).");
+        System.out.println("Remaining: " + availableTickets);
+    }
+}
+
+public class RailwaySystem {
+    public static void main(String[] args) {
+        TicketBooking system = new TicketBooking();
+
+        Thread t1 = new Thread(() -> system.bookTicket(4), "User1(Book)");
+        Thread t2 = new Thread(() -> system.cancelTicket(2), "User2(Cancel)");
+        Thread t3 = new Thread(() -> system.bookTicket(5), "User3(Book)");
+
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-emerald-400"></i> Expected Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed"><span class="text-slate-500 italic">// Note: Output order depends on OS Thread Scheduler</span>
+User1(Book) booked 4 ticket(s).
+Remaining: 6
+User3(Book) booked 5 ticket(s).
+Remaining: 1
+User2(Cancel) cancelled 2 ticket(s).
+Remaining: 3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= UNIT 5 ================= -->
+        <section id="unit-5" class="mb-20 scroll-mt-10">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 pb-3 border-b-2 border-indigo-100 flex items-center gap-3">
+                <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-sm">5</span>
+                Unit 5: User Interface (Swing)
+            </h2>
+
+            <!-- Card: Basic UI Merged -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-purple-50 border-b border-purple-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-purple-600 text-white text-xs font-bold px-2.5 py-1 rounded shadow-sm flex items-center gap-1">
+                            <i class="fa-solid fa-code-merge"></i> Merged Concept
+                        </span>
+                        <h3 class="text-lg font-bold text-slate-900">Basic GUI & Action Listeners</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-purple-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Addresses these slip questions:</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2 font-medium">
+                            <li>JFrame window with title "My First Swing Application" with JLabel that shows your name.</li>
+                            <li>JFrame with a JButton that displays a message when clicked.</li>
+                            <li>JLabel that changes color when a button is clicked.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class BasicGUI {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("My First Swing Application");
+        frame.setSize(300, 200);
+        frame.setLayout(new FlowLayout());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JLabel label = new JLabel("Hello, Student Name!");
+        JButton btn = new JButton("Click Me");
+
+        btn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "Button was clicked!");
+                label.setForeground(Color.RED); // Change color requirement
+            }
+        });
+
+        frame.add(label);
+        frame.add(btn);
+        frame.setVisible(true);
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-window-maximize text-emerald-400"></i> Expected GUI Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed"><span class="text-yellow-200">►</span> A graphical window titled "My First Swing Application" opens.
+<span class="text-yellow-200">►</span> It contains a label "Hello, Student Name!" and a "Click Me" button.
+<span class="text-yellow-200">►</span> <span class="italic text-slate-400">When the button is clicked:</span> A popup alert says "Button was clicked!" and the original label text turns RED.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Input Controls Merged -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-purple-50 border-b border-purple-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-purple-600 text-white text-xs font-bold px-2.5 py-1 rounded shadow-sm flex items-center gap-1">
+                            <i class="fa-solid fa-code-merge"></i> Merged Concept
+                        </span>
+                        <h3 class="text-lg font-bold text-slate-900">Combo Boxes & Radio Buttons</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-purple-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Addresses these slip questions:</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2 font-medium">
+                            <li>GUI by using swing component JComboBox. On click of show button display selected language on Jlabel.</li>
+                            <li>Create JRadioButtons for choosing payment mode... display selected mode when button clicked.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">import javax.swing.*;
+import java.awt.*;
+
+public class ControlsGUI {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Input Controls");
+        frame.setSize(350, 250);
+        frame.setLayout(new FlowLayout());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // --- Language Combo Box ---
+        String[] langs = {"Java", "Python", "C++"};
+        JComboBox&lt;String&gt; combo = new JComboBox&lt;&gt;(langs);
+        JLabel langLbl = new JLabel("Lang: None");
+        JButton langBtn = new JButton("Show Lang");
+        langBtn.addActionListener(e -> langLbl.setText("Lang: " + combo.getSelectedItem()));
+
+        // --- Payment Radio Buttons ---
+        JRadioButton rbCash = new JRadioButton("Cash");
+        JRadioButton rbUPI = new JRadioButton("UPI");
+        ButtonGroup bg = new ButtonGroup(); 
+        bg.add(rbCash); bg.add(rbUPI);
+        
+        JButton payBtn = new JButton("Pay");
+        JLabel payLbl = new JLabel("Mode: None");
+
+        payBtn.addActionListener(e -> {
+            if (rbCash.isSelected()) payLbl.setText("Mode: Cash");
+            else if (rbUPI.isSelected()) payLbl.setText("Mode: UPI");
+        });
+
+        frame.add(combo); frame.add(langBtn); frame.add(langLbl);
+        frame.add(new JSeparator(SwingConstants.HORIZONTAL));
+        frame.add(rbCash); frame.add(rbUPI); frame.add(payBtn); frame.add(payLbl);
+
+        frame.setVisible(true);
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-window-maximize text-emerald-400"></i> Expected GUI Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed"><span class="text-yellow-200">►</span> A graphical window titled "Input Controls" opens.
+<span class="text-yellow-200">►</span> <span class="italic text-slate-400">Action 1:</span> User selects "Python" from the dropdown and clicks "Show Lang". The label changes to <span class="text-white">"Lang: Python"</span>.
+<span class="text-yellow-200">►</span> <span class="italic text-slate-400">Action 2:</span> User clicks the "UPI" radio button and clicks "Pay". The label changes to <span class="text-white">"Mode: UPI"</span>.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Mouse Events -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-10 overflow-hidden">
+                <div class="p-6 bg-slate-50 border-b border-slate-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-1 rounded shadow-sm">Single Question</span>
+                        <h3 class="text-lg font-bold text-slate-900">Mouse Events (Listener)</h3>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Original Slip Question(s):</p>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1 font-medium">
+                            <li>Design a screen in Java to handle the Mouse Events such as MOUSE_MOVED and MOUSE_CLICK and display the position of the Mouse_Click in a TextField.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group code-container rounded-b-xl overflow-hidden shadow-inner">
+                    <button class="absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs px-3 py-1.5 rounded transition-all opacity-0 group-hover:opacity-100 shadow-md flex items-center gap-2 z-10" onclick="copyCode(this)">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <pre><code class="language-java p-6 block">import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class MouseEventsGUI extends JFrame implements MouseListener, MouseMotionListener {
+    JTextField tf;
+
+    MouseEventsGUI() {
+        setTitle("Mouse Events");
+        setSize(400, 300);
+        setLayout(new FlowLayout());
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        tf = new JTextField(25);
+        add(tf);
+
+        // Add listeners to track mouse over the frame
+        addMouseListener(this);
+        addMouseMotionListener(this);
+        
+        setVisible(true);
+    }
+
+    public void mouseMoved(MouseEvent e) {
+        tf.setText("Moved to X:" + e.getX() + " Y:" + e.getY());
+    }
+    public void mouseClicked(MouseEvent e) {
+        tf.setText("Clicked at X:" + e.getX() + " Y:" + e.getY());
+    }
+    
+    // Required empty methods from interfaces
+    public void mouseDragged(MouseEvent e) {} 
+    public void mousePressed(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e) {}
+    public void mouseExited(MouseEvent e) {}
+
+    public static void main(String[] args) {
+        new MouseEventsGUI();
+    }
+}</code></pre>
+                    <div class="bg-[#1e222a] border-t border-slate-700/60 p-5">
+                        <div class="text-[11px] text-slate-400 mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-window-maximize text-emerald-400"></i> Expected GUI Output
+                        </div>
+                        <div class="font-mono text-sm text-emerald-300 whitespace-pre-wrap leading-relaxed"><span class="text-yellow-200">►</span> A window with a single text field appears.
+<span class="text-yellow-200">►</span> <span class="italic text-slate-400">Moving mouse inside window:</span> Text field rapidly updates to <span class="text-white">"Moved to X:150 Y:120"</span>, etc.
+<span class="text-yellow-200">►</span> <span class="italic text-slate-400">Clicking mouse inside window:</span> Text field updates to <span class="text-white">"Clicked at X:150 Y:120"</span>.</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+        <footer class="mt-12 pt-6 border-t border-slate-200 text-center text-slate-500 text-sm pb-10">
+            Good luck on your lab exam! Code compiled and formatted for quick revision.
+        </footer>
+    </main>
+
+    <script>
+        // Initialize highlight.js
+        hljs.highlightAll();
+
+        // --- Intersection Observer for ScrollSpy ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('#sidebar-nav .nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px', // Triggers smoothly as user scrolls past headers
+                threshold: 0 
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentId = entry.target.getAttribute('id');
+                        
+                        navLinks.forEach(link => {
+                            // Reset styles
+                            link.classList.remove('active-nav');
+                            const icon = link.querySelector('.nav-icon');
+                            icon.classList.remove('bg-indigo-600', 'text-white');
+                            icon.classList.add('bg-slate-100', 'text-slate-500');
+                            
+                            // Apply active styles to the matching link
+                            if (link.getAttribute('href') === `#${currentId}`) {
+                                link.classList.add('active-nav');
+                                icon.classList.remove('bg-slate-100', 'text-slate-500');
+                                icon.classList.add('bg-indigo-600', 'text-white');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(sec => observer.observe(sec));
+        });
+
+        // Copy to clipboard functionality
+        function copyCode(button) {
+            const container = button.closest('.code-container');
+            const codeBlock = container.querySelector('code');
+            const textToCopy = codeBlock.innerText;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalContent = button.innerHTML;
+                button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                button.classList.add('bg-emerald-600', 'text-white');
+                button.classList.remove('bg-slate-700');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    button.classList.remove('bg-emerald-600', 'text-white');
+                    button.classList.add('bg-slate-700');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    setTimeout(() => { button.innerHTML = '<i class="fa-regular fa-copy"></i> Copy'; }, 2000);
+                } catch (err) {
+                    button.innerHTML = 'Error';
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+    </script>
+</body>
+</html>
